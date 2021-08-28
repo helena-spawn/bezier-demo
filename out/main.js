@@ -17073,13 +17073,23 @@ var require_p5_min = __commonJS({
 // src/main.ts
 var import_p5 = __toModule(require_p5_min());
 var sketch = (p5) => {
-  const width = 1024;
-  const height = 768;
+  const width = 600;
+  const height = 600;
   p5.setup = () => {
     p5.createCanvas(width, height);
   };
   p5.draw = () => {
     p5.background("black");
+    p5.stroke(255);
+    p5.strokeWeight(24);
+    p5.point(0, 300);
+    p5.point(p5.mouseX, p5.mouseY);
+    p5.point(400, 400);
+    p5.point(600, 300);
+    p5.strokeWeight(4);
+    p5.noFill();
+    p5.bezier(0, 300, p5.mouseX, p5.mouseY, 400, 400, 600, 300);
+    p5.line(0, 300, p5.mouseX, p5.mouseY);
   };
 };
 var myp5 = new import_p5.default(sketch);
